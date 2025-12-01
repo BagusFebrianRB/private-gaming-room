@@ -96,7 +96,7 @@
                                                 @if ($room->thumbnail)
                                                     <img src="{{ asset('storage/' . $room->thumbnail->image_path) }}"
                                                         alt="{{ $room->name }}"
-                                                        class="h-16 w-16 object-cover rounded">
+                                                        class="h-20 w-20 object-cover rounded">
                                                 @else
                                                     <div
                                                         class="h-16 w-16 bg-gray-200 rounded flex items-center justify-center">
@@ -175,7 +175,7 @@
         <!-- Modal -->
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="relative bg-white rounded-lg max-w-md w-full p-6" @click.away="open = false">
-                <h3 class="text-lg font-medium text-gray-900 mb-4">Delete Room</h3>
+                <h3 class="text-xl font-medium text-gray-900 mb-4">Delete Room</h3>
                 <p class="text-sm text-gray-500 mb-6">
                     Are you sure you want to delete this room? All photos and booking history will be deleted. This
                     action

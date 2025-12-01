@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,8 @@ Route::get('/', function () {
 })->name('home');
 
 // Rooms (Public, bisa diakses tanpa login)
-Route::get('/rooms', function () {
-    return view('rooms.index');
-})->name('rooms.index');
-
-Route::get('/rooms/{slug}', function ($slug) {
-    return view('rooms.show', compact('slug'));
-})->name('rooms.show');
+Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
+Route::get('/rooms/{slug}', [RoomController::class, 'show'])->name('rooms.show');
 
 // About Page
 Route::get('/about', function () {
