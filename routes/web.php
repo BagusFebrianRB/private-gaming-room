@@ -106,29 +106,12 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     // Rooms Management
     Route::prefix('rooms')->name('rooms.')->group(function () {
-        Route::get('/', function () {
-            return view('admin.rooms.index');
-        })->name('index');
-
-        Route::get('/create', function () {
-            return view('admin.rooms.create');
-        })->name('create');
-
-        Route::post('/', function () {
-            return 'Store room';
-        })->name('store');
-
-        Route::get('/{id}/edit', function ($id) {
-            return view('admin.rooms.edit', compact('id'));
-        })->name('edit');
-
-        Route::put('/{id}', function ($id) {
-            return 'Update room';
-        })->name('update');
-
-        Route::delete('/{id}', function ($id) {
-            return 'Delete room';
-        })->name('destroy');
+        Route::get('/', [App\Http\Controllers\Admin\RoomController::class, 'index'])->name('index');
+        Route::get('/create', [App\Http\Controllers\Admin\RoomController::class, 'create'])->name('create');
+        Route::post('/', [App\Http\Controllers\Admin\RoomController::class, 'store'])->name('store');
+        Route::get('/{room}/edit', [App\Http\Controllers\Admin\RoomController::class, 'edit'])->name('edit');
+        Route::put('/{room}', [App\Http\Controllers\Admin\RoomController::class, 'update'])->name('update');
+        Route::delete('/{room}', [App\Http\Controllers\Admin\RoomController::class, 'destroy'])->name('destroy');
     });
 
     // Bookings Management
@@ -214,4 +197,4 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 });
 
 // Load Breeze auth routes (login, register, dll)
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
