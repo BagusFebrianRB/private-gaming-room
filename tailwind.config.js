@@ -12,6 +12,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
+                fugaz: ['"Fugaz One"', 'cursive'],
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
         },

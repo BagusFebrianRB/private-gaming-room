@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
+use App\Models\RoomGallery;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,8 @@ use App\Http\Controllers\RoomController;
 
 // Landing Page
 Route::get('/', function () {
-    return view('welcome');
+    $roomGallery = RoomGallery::active()->get();
+    return view('welcome', compact('roomGallery'));
 })->name('home');
 
 // Rooms (Public, bisa diakses tanpa login)
@@ -99,6 +101,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+
+    //Room Gallery
+    Route::prefix('room-gallery')->name('room-gallery.')->group(function () {
+        Route::get('/', [App\Http\Controllers\Admin\RoomGalleryController::class, 'index'])->name('index');
+        Route::post('/', [App\Http\Controllers\Admin\RoomGalleryController::class, 'store'])->name('store');
+        Route::put('/{roomGallery}', [App\Http\Controllers\Admin\RoomGalleryController::class, 'update'])->name('update');
+        Route::delete('/{roomGallery}', [App\Http\Controllers\Admin\RoomGalleryController::class, 'destroy'])->name('destroy');
+    });
 
     // Rooms Management
     Route::prefix('rooms')->name('rooms.')->group(function () {
