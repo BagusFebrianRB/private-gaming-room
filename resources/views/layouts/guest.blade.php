@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -31,7 +33,7 @@
             });
         }
     }"
-        :class="scrolled ? 'bg-gray-200/90 backdrop-blur-5xl shadow-xl border-b border-white/10' :
+        :class="scrolled ? 'bg-gray-100 backdrop-blur-5xl shadow-xl border-b border-white/10' :
             'bg-none shadow-md'"
         class="sticky top-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,32 +44,32 @@
                         <a href="{{ route('home') }}" class="flex items-center gap-2">
                             <img src="{{ asset('images/Logo1.png') }}" alt="Gaming Room Logo"
                                 class="h-10 w-10 object-contain rounded-xl">
-                            <span class="font-bold text-2xl text-gray-700 ">PVG</span>
+                            <span class="font-black text-2xl text-gray-700">PVG</span>
                         </a>
                     </div>
 
                     <!-- Desktop Navigation Links -->
                     <div class="hidden sm:flex sm:items-center sm:ms-10 space-x-8">
                         <a href="{{ route('home') }}"
-                            class="{{ request()->routeIs('home') ? 'text-blue-600 border-b-2 rounded-md  border-blue-600' : 'text-gray-600 hover:text-blue-400' }} inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors">
+                            class="{{ request()->routeIs('home') ? 'text-blue-600 border-b-2 rounded-md  border-blue-600' : 'text-gray-600 hover:text-blue-400' }} inline-flex items-center px-1 pt-1 text-base font-medium transition-colors">
                             Home
                         </a>
                         <a href="{{ route('rooms.index') }}"
-                            class="{{ request()->routeIs('rooms.*') ? 'text-blue-600 border-b-2 rounded-md border-blue-600' : 'text-gray-600 hover:text-blue-400' }} inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors">
+                            class="{{ request()->routeIs('rooms.*') ? 'text-blue-600 border-b-2 rounded-md border-blue-600' : 'text-gray-600 hover:text-blue-400' }} inline-flex items-center px-1 pt-1 text-base font-medium transition-colors">
                             Rooms
                         </a>
                         @auth
                             <a href="{{ route('booking.index') }}"
-                                class="{{ request()->routeIs('booking.*') ? 'text-blue-600 border-b-2 rounded-md border-blue-600' : 'text-gray-600 hover:text-blue-400' }} inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors">
+                                class="{{ request()->routeIs('booking.*') ? 'text-blue-600 border-b-2 rounded-md border-blue-600' : 'text-gray-600 hover:text-blue-400' }} inline-flex items-center px-1 pt-1 text-base font-medium transition-colors">
                                 Booking
                             </a>
                             <a href="{{ route('my-bookings.index') }}"
-                                class="{{ request()->routeIs('my-bookings.*') ? 'text-blue-600 border-b-2 rounded-md border-blue-600' : 'text-gray-600 hover:text-blue-400' }} inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors">
+                                class="{{ request()->routeIs('my-bookings.*') ? 'text-blue-600 border-b-2 rounded-md border-blue-600' : 'text-gray-600 hover:text-blue-400' }} inline-flex items-center px-1 pt-1 text-base font-medium transition-colors">
                                 My Bookings
                             </a>
                         @endauth
                         <a href="{{ route('about') }}"
-                            class="{{ request()->routeIs('about') ? 'text-blue-600 border-b-2 rounded-md border-blue-600' : 'text-gray-600 hover:text-blue-400' }} inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors">
+                            class="{{ request()->routeIs('about') ? 'text-blue-600 border-b-2 rounded-md border-blue-600' : 'text-gray-600 hover:text-blue-400' }} inline-flex items-center px-1 pt-1 text-base font-medium transition-colors">
                             About
                         </a>
                     </div>
@@ -227,6 +229,11 @@
     <main class="min-h-screen bg-gray-50">
         {{ $slot }}
     </main>
+
+    <script>
+        AOS.init();
+    </script>
+
 </body>
 
 </html>

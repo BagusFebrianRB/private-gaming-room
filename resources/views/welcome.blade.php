@@ -15,46 +15,60 @@
             }
         }
     </style>
+    <script>
+        if (window.location.hash) {
+            history.replaceState(null, null, window.location.pathname);
+        }
+    </script>
 
 
-    <!-- Full Page Wrapper dengan Background Striped -->
+
+    <!-- Full Page Wrapper -->
     <div class="relative w-full bg-[#faf9f6] overflow-hidden min-h-screen">
 
-        <!-- Soft Blue Radial Background -->
-        <div class="fixed inset-0 z-0"
+        <!-- Diagonal Cross Grid Top Background -->
+        <div class="fixed inset-0"
             style="
-            background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.08) 1px, transparent 0),
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px),
-        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px);
-        background-size: 8px 8px, 32px 32px, 32px 32px;
+            background:
+                radial-gradient(125% 125% at 50% 90%, #fff 40%, #6d94e7 100%);
         ">
         </div>
 
+
         <!-- Semua Konten dengan z-index lebih tinggi -->
         <div class="relative z-20">
-
             <!-- Hero Section -->
-            <section class="text-gray-800 py-10">
-                <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <section class="relative text-gray-800 py-20 overflow-hidden min-h-screen flex items-center">
+                <!-- Background Image -->
+                <div class="absolute inset-0 bg-contain bg-no-repeat md:bg-bottom z-0 opacity-65"
+                    style="background-image: url('{{ asset('images/background.png') }}')">
+                </div>
 
-                    <!-- LEFT TEXT -->
-                    <div class="space-y-6">
-                        <h1 class="text-5xl md:text-6xl font-bold leading-tight font-fugaz">
-                            PRIVATE GAMING <span class="text-blue-600">ROOM</span>
+                <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+                    <!-- CENTER TEXT -->
+                    <div class="text-center space-y-3 md:space-y-6">
+                        <!-- Main Heading -->
+                        <h1 class="text-4xl md:text-6xl font-bold leading-tight font-fugaz " data-aos="fade-up"
+                            data-aos-duration="1000">
+                            PRIVATE ROOM<br>
+                            <span class="text-blue-600">UNLIMITED FUN</span>
                         </h1>
 
-                        <p class="text-lg text-gray-600 max-w-md">
+                        <!-- Subheading -->
+                        <p class="text-base md:text-xl text-gray-800 max-w-2xl mx-auto" data-aos="fade-up"
+                            data-aos-delay="200">
                             Satu ruang, seribu keseruan—Playstation, Karaoke, Netflix dikemas dalam satu Private Room
                             yang dibuat untuk pengalaman terbaikmu.
                         </p>
 
                         <!-- CTA Buttons -->
-                        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                        <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up"
+                            data-aos-delay="400">
                             @guest
                                 <a href="{{ route('booking.index') }}"
-                                    class="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl
-                                        text-black bg-white hover:bg-gray-100 shadow-lg hover:shadow-xl
-                                        transform hover:-translate-y-0.5 transition-all duration-200">
+                                    class="inline-flex items-center justify-center px-10 py-5 text-lg font-medium rounded-xl
+                        text-black bg-white hover:bg-gray-100 shadow-2xl hover:shadow-2xl
+                        transform hover:-translate-y-1 transition-all duration-200">
                                     <span>Booking Sekarang</span>
                                     <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -63,16 +77,16 @@
                                 </a>
 
                                 <a href="{{ route('register') }}"
-                                    class="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl
-                                        text-white bg-blue-600 hover:bg-blue-800 shadow-lg hover:shadow-xl
-                                        transform hover:-translate-y-0.5 transition-all duration-200 border border-indigo-500/40">
+                                    class="inline-flex items-center justify-center px-10 py-5 text-lg font-medium rounded-xl
+                        text-white bg-blue-600 hover:bg-blue-800 shadow-xl hover:shadow-2xl
+                        transform hover:-translate-y-1 transition-all duration-200 border border-blue-500/40">
                                     Daftar Sekarang
                                 </a>
                             @else
                                 <a href="{{ route('booking.index') }}"
-                                    class="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl
-                                        text-black bg-white hover:bg-gray-100 shadow-lg hover:shadow-xl
-                                        transform hover:-translate-y-0.5 transition-all duration-200">
+                                    class="inline-flex items-center justify-center px-10 py-5 text-lg font-medium rounded-xl
+                        text-black bg-white hover:bg-gray-100 shadow-xl hover:shadow-2xl
+                        transform hover:-translate-y-1 transition-all duration-200">
                                     <span>Booking Sekarang</span>
                                     <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -81,93 +95,41 @@
                                 </a>
 
                                 <a href="{{ route('my-bookings.index') }}"
-                                    class="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl
-                                        text-white bg-blue-600 hover:bg-blue-800 shadow-lg hover:shadow-xl
-                                        transform hover:-translate-y-0.5 transition-all duration-200 border border-indigo-500/40">
+                                    class="inline-flex items-center justify-center px-10 py-5 text-lg font-medium rounded-xl
+                        text-white bg-blue-600 hover:bg-blue-800 shadow-xl hover:shadow-2xl
+                        transform hover:-translate-y-1 transition-all duration-200 border border-blue-500/40">
                                     My Bookings
                                 </a>
                             @endguest
                         </div>
 
-                    </div>
-
-                    <!-- RIGHT IMAGE -->
-                    <div class="flex justify-center md:justify-end relative cursor-default">
-                        <div class="relative inline-block">
-
-                            <!-- PS5 with Enhanced Shadow -->
-                            <img src="{{ asset('images/3D.png') }}" alt="PlayStation Image"
-                                class="relative z-10 w-72 md:w-[420px] scale-105
-                                animate-[float_5s_ease-in-out_infinite]">
-
-                            <!-- Floating Card 1 - Top Right (5+ Rooms) -->
-                            <div
-                                class="absolute md:bottom-72 bottom-44 md:left-64 left-44 z-10
-                                bg-gray-400 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
-                                border border-white/20 bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100
-                                px-8 py-2 shadow-lg
-                                animate-[float_4s_ease-in-out_infinite]
-                                hover:bg-white/15 hover:border-white/30 hover:scale-105
-                                transition-all duration-300">
-                                <div class="flex items-center gap-3">
-
-                                    <div>
-                                        <p class="text-3xl font-bold text-blue-500">5+</p>
-                                        <p class="text-sm text-gray-600">Rooms</p>
-                                    </div>
+                        <!-- Scroll Down Indicator-->
+                        <div class="mt-16" data-aos="fade-up">
+                            <a href="#features" class="inline-block animate-bounce">
+                                <div
+                                    class="w-10 h-10 border-2 border-blue-400 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                    </svg>
                                 </div>
-                            </div>
-
-                            <!-- Floating Card 2 - Middle Left (30+ Games) -->
-                            <div
-                                class="absolute top-1/3 -left-6 z-10
-                                bg-gray-400 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
-                                border border-white/20 bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100
-                                px-6 py-2 shadow-lg
-                                animate-[float_3.5s_ease-in-out_infinite]
-                                hover:bg-white/15 hover:border-white/30 hover:scale-105
-                                transition-all duration-300">
-                                <div class="flex items-center gap-3">
-                                    <div>
-                                        <p class="text-3xl font-bold text-violet-500">30+</p>
-                                        <p class="text-sm text-gray-600">Games</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Floating Card 3 - Bottom Right (4K Display) -->
-                            <div
-                                class="absolute bottom-4 -right-4 z-10
-                                bg-gray-400 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
-                                border border-white/20 bg-opacity-5 backdrop-saturate-100 backdrop-contrast-100
-                                px-8 py-2 shadow-lg
-                                animate-[float_4.5s_ease-in-out_infinite_1s]
-                                hover:bg-white/15 hover:border-white/30 hover:scale-105
-                                transition-all duration-300">
-                                <div class="flex items-center gap-3">
-
-                                    <div>
-                                        <p class="text-3xl font-bold text-rose-500">4K</p>
-                                        <p class="text-sm text-gray-600">Display</p>
-                                    </div>
-                                </div>
-                            </div>
-
+                            </a>
                         </div>
                     </div>
-
                 </div>
             </section>
 
             <!-- Features Section -->
-            <div class="py-16 sm:py-20 ">
+            <div id="features" class="py-16 sm:py-20 ">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <!-- Section Header -->
                     <div class="text-center mb-12">
-                        <h2 class="text-3xl sm:text-4xl font-bold text-gray-700 mb-4">
+                        <h2 class="text-3xl sm:text-4xl font-bold text-gray-700 mb-4" data-aos="fade-up"
+                            data-aos-duration="1000">
                             Kenapa Pilih Gaming Room Kami?
                         </h2>
-                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
                             Kami menyediakan pengalaman hiburan terbaik dengan fasilitas premium dan harga terjangkau
                         </p>
                     </div>
@@ -175,11 +137,11 @@
                     <!-- Features Grid -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                         <!-- Feature 1 -->
-                        <div
-                            class="bg-gray-400 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
+                        <div class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
                                     border  bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 p-6 sm:p-8
                                     shadow-lg hover:shadow-2xl
-                                    transition-all duration-500 hover:-translate-y-2">
+                                    transition-all duration-500 hover:-translate-y-2"
+                            data-aos="zoom-in" data-aos-duration="1000">
                             <div class="w-14 h-14 flex items-center justify-center mb-5 text-3xl">
                                 <img width="48" height="48" src="https://img.icons8.com/emoji/48/video-game.png"
                                     alt="video-game" />
@@ -194,10 +156,11 @@
 
                         <!-- Feature 2 -->
                         <div
-                            class="bg-gray-400 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
+                            class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
                                     border  bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 p-6 sm:p-8
                                     shadow-lg hover:shadow-2xl
-                                    transition-all duration-500 hover:-translate-y-2">
+                                    transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in"
+                            data-aos-duration="1000">
                             <div class="w-14 h-14  flex items-center justify-center mb-5 text-3xl">
                                 <img width="48" height="48" src="https://img.icons8.com/color/48/wifi-logo.png"
                                     alt="wifi-logo" />
@@ -212,10 +175,11 @@
 
                         <!-- Feature 3 -->
                         <div
-                            class="bg-gray-400 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
+                            class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
                                     border  bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 p-6 sm:p-8
                                     shadow-lg hover:shadow-2xl
-                                    transition-all duration-500 hover:-translate-y-2">
+                                    transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in"
+                            data-aos-duration="1000">
                             <div class="w-14 h-14  flex items-center justify-center mb-5 text-3xl">
                                 <img width="48" height="48" src="https://img.icons8.com/3d-fluency/50/sofa.png"
                                     alt="sofa" />
@@ -230,10 +194,11 @@
 
                         <!-- Feature 4 -->
                         <div
-                            class="bg-gray-400 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
+                            class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
                                     border  bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 p-6 sm:p-8
                                     shadow-lg hover:shadow-2xl
-                                    transition-all duration-500 hover:-translate-y-2">
+                                    transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in"
+                            data-aos-duration="1000">
                             <div class="w-14 h-14  flex items-center justify-center mb-5 text-3xl">
                                 <img width="48" height="48"
                                     src="https://img.icons8.com/emoji/48/money-bag-emoji.png" alt="money-bag-emoji" />
@@ -248,10 +213,11 @@
 
                         <!-- Feature 5 -->
                         <div
-                            class="bg-gray-400 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
+                            class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
                                     border  bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 p-6 sm:p-8
                                     shadow-lg hover:shadow-2xl
-                                    transition-all duration-500 hover:-translate-y-2">
+                                    transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in"
+                            data-aos-duration="1000">
                             <div class="w-14 h-14  flex items-center justify-center mb-5 text-3xl">
                                 <img width="64" height="64"
                                     src="https://img.icons8.com/external-konkapp-flat-konkapp/64/external-noodle-seafood-konkapp-flat-konkapp.png"
@@ -267,10 +233,11 @@
 
                         <!-- Feature 6 -->
                         <div
-                            class="bg-gray-400 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
+                            class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
                                     border  bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 p-6 sm:p-8
                                     shadow-lg hover:shadow-2xl
-                                    transition-all duration-500 hover:-translate-y-2">
+                                    transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in"
+                            data-aos-duration="1000">
                             <div class="w-14 h-14  flex items-center justify-center mb-5 text-3xl">
                                 <img src="https://img.icons8.com/?size=100&id=yHTclm7aovKd&format=png&color=000000"
                                     alt="">
@@ -286,24 +253,27 @@
                 </div>
             </div>
 
-            <!-- Sneak Peek Rooms Carousel -->
+            <!-- Rooms Carousel -->
             @if ($roomGallery->count() > 0)
-                <div class="py-16 sm:py-20 bg-gray-900 relative overflow-hidden">
+                <div class="py-16 sm:py-12 bg-blue-950 relative overflow-hidden">
                     <!-- Background Pattern -->
                     <div class="absolute inset-0 opacity-5">
                         <div class="absolute inset-0"
-                            style="background: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+                            style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'20\' height=\'16\' viewBox=\'0 0 20 16\'%3E%3Cg fill=\'%239C92AC\' fill-opacity=\'0.7\'%3E%3Cpath fill-rule=\'evenodd\' d=\'M0 .04C2.6.22 4.99 1.1 7 2.5A13.94 13.94 0 0 1 15 0h4c.34 0 .67.01 1 .04v2A12 12 0 0 0 7.17 12h5.12A7 7 0 0 1 20 7.07V14a5 5 0 0 0-3-4.58A5 5 0 0 0 14 14H0V7.07c.86.12 1.67.4 2.4.81.75-1.52 1.76-2.9 2.98-4.05C3.79 2.83 1.96 2.2 0 2.04v-2z\'/%3E%3C/g%3E%3C/svg%3E');">
                         </div>
+
                     </div>
 
                     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <!-- Header -->
                         <div class="text-center mb-12">
-                            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-                                Sneak Peek Ruangan Kami
+                            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-aos="fade-up"
+                            data-aos-duration="1000">
+                                Ruangan Kami
                             </h2>
-                            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-                                Lihat koleksi setup gaming premium kami
+                            <p class="text-lg text-gray-400 max-w-2xl mx-auto" data-aos="fade-up"
+                            data-aos-delay="200">
+                                Lihat koleksi gaming room premium kami
                             </p>
                         </div>
 
@@ -339,7 +309,8 @@
 
                             <!-- Slides -->
                             <div
-                                class="relative aspect-[16/9] md:aspect-[21/12] md:max-w-[900px] mx-auto rounded-2xl overflow-hidden bg-gray-800 shadow-2xl">
+                                class="relative aspect-[16/9] md:aspect-[8/4] md:max-w-[900px] mx-auto rounded-2xl overflow-hidden bg-gray-800 shadow-2xl" data-aos="zoom-in"
+                            data-aos-duration="1000">
                                 @foreach ($roomGallery as $index => $image)
                                     <div x-show="currentSlide === {{ $index }}"
                                         x-transition:enter="transition ease-out duration-500"
@@ -428,15 +399,17 @@
             <div class="py-16 sm:py-20">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-12">
-                        <h2 class="text-3xl sm:text-4xl font-bold text-gray-700 mb-4">
+                        <h2 class="text-3xl sm:text-4xl font-bold text-gray-700 mb-4" data-aos="fade-up">
                             Cara Booking Mudah
                         </h2>
-                        <p class="text-lg text-gray-600">
+                        <p class="text-lg text-gray-600" data-aos="fade-up"
+                            data-aos-delay="200">
                             Hanya 3 langkah untuk mulai bermain!
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative" data-aos="zoom-in"
+                            data-aos-delay="400">
                         <!-- Step 1 -->
                         <div class="text-center relative">
                             <div
@@ -496,17 +469,154 @@
                 </div>
             </div>
 
+            {{-- FAQ SECTION --}}
+
+            <section class="max-w-3xl mx-auto px-4 py-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center" data-aos="fade-up"
+                            data-aos-duration="1000">
+                    Frequently Asked Questions
+                </h2>
+
+                <div class="space-y-4">
+                    <!-- FAQ Item -->
+                    <details class="group bg-white shadow-xl rounded-xl p-5 border border-gray-100" data-aos="fade-up"
+                            data-aos-delay="100">
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <span class="font-medium text-gray-800">Bagaimana cara melakukan reservasi?</span>
+                            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+                                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+                        <p class="mt-3 text-gray-600">
+                            Pilih Ruangan di halaman "Booking", lalu lihat & pilih jam yang tersedia, lalu klik "Book
+                            Now".
+                            Sistem akan menampilkan harga sesuai waktu dan ruangan yang kamu pilih, lalu bayar tagihan
+                            sesuai waktu yang ditentukan.
+                        </p>
+                    </details>
+
+                    <!-- FAQ Item -->
+                    <details class="group bg-white shadow-xl rounded-xl p-5 border border-gray-100" data-aos="fade-up"
+                            data-aos-delay="150">
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <span class="font-medium text-gray-800">Apakah bisa bayar di tempat?</span>
+                            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+                                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+                        <p class="mt-3 text-gray-600">
+                            Untuk Reservasi, customer harus membayar terlebih dahulu via website minimal DP 50%.
+                            Untuk pelunasannya kamu menerima pembayaran tunai atau QRIS saat datang ke lokasi.
+                        </p>
+                    </details>
+
+                    <!-- FAQ Item -->
+                    <details class="group bg-white shadow-xl rounded-xl p-5 border border-gray-100" data-aos="fade-up"
+                            data-aos-delay="200">
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <span class="font-medium text-gray-800">Apakah boleh membawa makanan dan minuman
+                                sendiri?</span>
+                            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+                                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+                        <p class="mt-3 text-gray-600">
+                            Boleh, pengunjung bebas membawa makanan dan minuman tanpa biaya tambahan.
+                        </p>
+                    </details>
+
+                    <!-- FAQ Item -->
+                    <details class="group bg-white shadow-xl rounded-xl p-5 border border-gray-100" data-aos="fade-up"
+                            data-aos-delay="250">
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <span class="font-medium text-gray-800">Berapa maksimal orang dalam satu ruangan?</span>
+                            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+                                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+                        <p class="mt-3 text-gray-600">
+                            Tergantung jenis ruangan. Premier untuk 2 orang, VVIP hingga 6 orang, dan Premiere Room
+                            hingga 10 orang.
+                        </p>
+                    </details>
+
+                    <!-- FAQ Item -->
+                    <details class="group bg-white shadow-xl rounded-xl p-5 border border-gray-100" data-aos="fade-up"
+                            data-aos-delay="300">
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <span class="font-medium text-gray-800">Apakah bisa refund atau reschedule?</span>
+                            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+                                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+                        <p class="mt-3 text-gray-600">
+                            Reschedule bisa dilakukan maksimal 3 jam sebelum jadwal. Refund tidak tersedia jika
+                            sudah melakukan reservasi.
+                        </p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- BANTUAN LANJUTAN -->
+            <section
+                class="max-w-3xl mx-auto px-4 py-10 text-center shadow-xl bg-white hover:bg-blue-500 rounded-xl duration-1000" data-aos="zoom-in"
+                            data-aos-duration="1000" data-aos-delay="200">
+                <p class="text-gray-800 mb-4 text-xl font-bold">
+                    Informasi kurang lengkap ? <br>
+                    <span class="font-light text-lg">Hubungi kami melalui WhatsApp atau hubunngi kontak lain dari kami
+                        dengan menekan tombol di bawah ini.</span>
+                </p>
+
+                <!-- Tombol WA -->
+                <div class="flex items-center justify-center gap-4 flex-col sm:flex-row ">
+                    <!-- WhatsApp CTA -->
+                    <a href="https://wa.me/6282137679526?text=Halo%20Admin%20PVG%2C%20saya%20mau%20tanya%20tentang%20reservasi%20ruangan."
+                        target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-3 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-xl font-semibold shadow-lg transform hover:-translate-y-1.5 transition-all duration-200">
+                        <!-- WA Icon (inline SVG) -->
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                            viewBox="0 0 24 24">
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                                clip-rule="evenodd" />
+                            <path fill="currentColor"
+                                d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z" />
+                        </svg>
+
+
+                        <span>Chat ke WhatsApp</span>
+                    </a>
+
+                    <!-- Tombol Lihat FAQ Lengkap (opsional) -->
+                    <a href="/about"
+                        class="inline-flex items-center px-6 py-3 border border-gray-200 rounded-xl text-gray-700 hover:bg-gray-50  transform hover:-translate-y-1.5 transition-all duration-200">
+                        Lihat Kontak Kami
+                    </a>
+                </div>
+            </section>
+
+
+
             <!-- CTA Section -->
             <div class="relative text-gray-700 py-16 sm:py-20 overflow-hidden">
                 <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-aos="fade-up"
+                            data-aos-duration="1000">
                         Ready to Level Up?
                     </h2>
-                    <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto"  data-aos="fade-up"
+                            data-aos-delay="200">
                         Booking sekarang dan rasakan pengalaman gaming terbaik dengan setup premium!
                     </p>
 
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center"  data-aos="zoom-in"
+                            data-aos-duration="1000">
                         @guest
                             <a href="{{ route('register') }}"
                                 class="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl text-blue-600 bg-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
@@ -540,7 +650,8 @@
             <!-- Footer -->
             <div class=" text-gray-500 py-12">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8"  data-aos="zoom-in"
+                            data-aos-duration="1000">
                         <!-- Brand -->
                         <div>
                             <h3 class="text-gray-700 text-xl font-bold mb-4">Private Gaming Room</h3>
