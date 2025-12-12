@@ -1,12 +1,7 @@
 <x-guest-layout>
-    <div class="relative w-full bg-[#faf9f6] overflow-hidden min-h-screen">
+    <div class="relative w-full bg-white overflow-hidden min-h-screen">
         <!-- Diagonal Cross Grid Top Background -->
-        <div class="fixed inset-0"
-            style="
-            background:
-                radial-gradient(125% 125% at 50% 90%, #fff 40%, #6d94e7 100%);
-        ">
-        </div>
+
         <div class="relative z-20">
             <!-- Header Section -->
             <div class=" text-gray-700 py-12 sm:py-8">

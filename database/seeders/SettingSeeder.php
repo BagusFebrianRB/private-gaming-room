@@ -11,23 +11,23 @@ class SettingSeeder extends Seeder
     {
         $settings = [
             // Business Info
-            ['key' => 'business_name', 'value' => 'Gaming Room XYZ', 'type' => 'text'],
+            ['key' => 'business_name', 'value' => 'Private Gaming Room', 'type' => 'text'],
             ['key' => 'business_tagline', 'value' => 'Best Gaming Experience', 'type' => 'text'],
             ['key' => 'business_description', 'value' => 'Private gaming room dengan fasilitas terbaik', 'type' => 'text'],
-            ['key' => 'business_address', 'value' => 'Jl. Gaming No. 123, Surabaya', 'type' => 'text'],
-            ['key' => 'business_phone', 'value' => '08123456789', 'type' => 'text'],
+            ['key' => 'business_address', 'value' => 'Jl.Kh Agus Salim No.17, Tuban, Jawa Timur, Indonesia', 'type' => 'text'],
+            ['key' => 'business_phone', 'value' => '081246872549', 'type' => 'text'],
             ['key' => 'business_email', 'value' => 'info@gamingroom.com', 'type' => 'text'],
-            ['key' => 'business_whatsapp', 'value' => '08123456789', 'type' => 'text'],
+            ['key' => 'business_whatsapp', 'value' => '081246872549', 'type' => 'text'],
 
             // Social Media
-            ['key' => 'instagram_url', 'value' => 'https://instagram.com/gamingroom', 'type' => 'text'],
+            ['key' => 'instagram_url', 'value' => 'https://www.instagram.com/privategaming_tuban/', 'type' => 'text'],
             ['key' => 'facebook_url', 'value' => '', 'type' => 'text'],
             ['key' => 'tiktok_url', 'value' => '', 'type' => 'text'],
 
             // Booking Policy
             ['key' => 'min_booking_duration', 'value' => '1', 'type' => 'number'],
             ['key' => 'max_booking_duration', 'value' => '8', 'type' => 'number'],
-            ['key' => 'payment_timeout', 'value' => '30', 'type' => 'number'],
+            ['key' => 'payment_timeout', 'value' => '60', 'type' => 'number'],
             ['key' => 'dp_percentage', 'value' => '50', 'type' => 'number'],
             ['key' => 'min_booking_advance', 'value' => '0', 'type' => 'number'],
 
@@ -41,6 +41,12 @@ class SettingSeeder extends Seeder
             ['key' => 'whatsapp_enabled', 'value' => 'false', 'type' => 'boolean'],
             ['key' => 'whatsapp_api_key', 'value' => '', 'type' => 'text'],
             ['key' => 'email_enabled', 'value' => 'true', 'type' => 'boolean'],
+
+            // Payment Info (Bank Account)
+            ['key' => 'bank_name', 'value' => 'BCA', 'type' => 'text'],
+            ['key' => 'bank_account_number', 'value' => '8240683343', 'type' => 'text'],
+            ['key' => 'bank_account_name', 'value' => 'Liman Calvin Sanjaya', 'type' => 'text'],
+            ['key' => 'admin_whatsapp', 'value' => '081246872549', 'type' => 'text'],
         ];
 
         foreach ($settings as $setting) {

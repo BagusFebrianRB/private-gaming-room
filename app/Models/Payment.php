@@ -15,9 +15,8 @@ class Payment extends Model
         'payment_method',
         'payment_type',
         'status',
-        'midtrans_order_id',
-        'midtrans_transaction_id',
-        'midtrans_payment_type',
+        'proof_image',        // NEW
+        'rejected_reason',    // NEW
         'paid_by',
         'notes',
         'paid_at',

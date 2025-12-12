@@ -24,24 +24,46 @@
 
 
     <!-- Full Page Wrapper -->
-    <div class="relative w-full bg-[#faf9f6] overflow-hidden min-h-screen">
+    <div class="relative w-full bg-white overflow-hidden min-h-screen">
 
-        <!-- Diagonal Cross Grid Top Background -->
+        {{-- <!-- Diagonal Cross Grid Top Background -->
         <div class="fixed inset-0"
             style="
             background:
                 radial-gradient(125% 125% at 50% 90%, #fff 40%, #6d94e7 100%);
         ">
-        </div>
+        </div> --}}
 
 
         <!-- Semua Konten dengan z-index lebih tinggi -->
         <div class="relative z-20">
             <!-- Hero Section -->
-            <section class="relative text-gray-800 py-20 overflow-hidden min-h-screen flex items-center">
+            <section class="relative text-gray-800 py-14 overflow-hidden min-h-[75vh] md:min-h-screen flex items-center">
                 <!-- Background Image -->
-                <div class="absolute inset-0 bg-contain bg-no-repeat md:bg-bottom z-0 opacity-65"
-                    style="background-image: url('{{ asset('images/background.png') }}')">
+                <div class="absolute inset-0 bg-contain bg-no-repeat z-0
+                opacity-15 md:opacity-20 lg:opacity-65
+                bg-center md:bg-right
+                scale-125 md:scale-100
+                top-10 md:top-0
+                right-0 md:-right-20 lg:-right-48 "
+                    style="background-image: url('{{ asset('images/kratos.png') }}')">
+                    <div
+                        class="absolute bottom-0 left-0 w-full h-40 md:h-60
+                bg-gradient-to-t from-white from-10% to-transparent">
+                    </div>
+                </div>
+
+                <div class="hidden lg:block absolute inset-0 bg-contain bg-no-repeat z-0
+                opacity-40 md:opacity-50 lg:opacity-65
+                bg-left
+                scale-90 md:scale-100 lg:scale-110
+                top-5 md:top-10
+                -left-20 md:-left-24 lg:-left-28"
+                    style="background-image: url('{{ asset('images/messi.png') }}')">
+                    <div
+                        class="absolute bottom-0 left-0 w-full h-40 md:h-60
+                bg-gradient-to-t from-white from-20% to-transparent">
+                    </div>
                 </div>
 
                 <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
@@ -51,11 +73,13 @@
                         <h1 class="text-4xl md:text-6xl font-bold leading-tight font-fugaz " data-aos="fade-up"
                             data-aos-duration="1000">
                             PRIVATE ROOM<br>
-                            <span class="text-blue-600">UNLIMITED FUN</span>
+                            <span
+                                class="bg-gradient-to-r from-blue-500 from-10% via-teal-500  to-emerald-500 to-80%  bg-clip-text text-transparent">UNLIMITED
+                                FUN</span>
                         </h1>
 
                         <!-- Subheading -->
-                        <p class="text-base md:text-xl text-gray-800 max-w-2xl mx-auto" data-aos="fade-up"
+                        <p class="text-base md:text-lg text-gray-800 max-w-xl mx-auto" data-aos="fade-up"
                             data-aos-delay="200">
                             Satu ruang, seribu keseruan—Playstation, Karaoke, Netflix dikemas dalam satu Private Room
                             yang dibuat untuk pengalaman terbaikmu.
@@ -67,7 +91,7 @@
                             @guest
                                 <a href="{{ route('booking.index') }}"
                                     class="inline-flex items-center justify-center px-10 py-5 text-lg font-medium rounded-xl
-                        text-black bg-white hover:bg-gray-100 shadow-2xl hover:shadow-2xl
+                        text-white bg-blue-600 hover:bg-blue-700 shadow-2xl hover:shadow-2xl
                         transform hover:-translate-y-1 transition-all duration-200">
                                     <span>Booking Sekarang</span>
                                     <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,8 +102,8 @@
 
                                 <a href="{{ route('register') }}"
                                     class="inline-flex items-center justify-center px-10 py-5 text-lg font-medium rounded-xl
-                        text-white bg-blue-600 hover:bg-blue-800 shadow-xl hover:shadow-2xl
-                        transform hover:-translate-y-1 transition-all duration-200 border border-blue-500/40">
+                        text-black bg-gray-100 hover:bg-gray-200 shadow-xl hover:shadow-2xl
+                        transform hover:-translate-y-1 transition-all duration-200">
                                     Daftar Sekarang
                                 </a>
                             @else
@@ -155,12 +179,11 @@
                         </div>
 
                         <!-- Feature 2 -->
-                        <div
-                            class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
+                        <div class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
                                     border  bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 p-6 sm:p-8
                                     shadow-lg hover:shadow-2xl
-                                    transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in"
-                            data-aos-duration="1000">
+                                    transition-all duration-500 hover:-translate-y-2"
+                            data-aos="zoom-in" data-aos-duration="1000">
                             <div class="w-14 h-14  flex items-center justify-center mb-5 text-3xl">
                                 <img width="48" height="48" src="https://img.icons8.com/color/48/wifi-logo.png"
                                     alt="wifi-logo" />
@@ -174,12 +197,11 @@
                         </div>
 
                         <!-- Feature 3 -->
-                        <div
-                            class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
+                        <div class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
                                     border  bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 p-6 sm:p-8
                                     shadow-lg hover:shadow-2xl
-                                    transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in"
-                            data-aos-duration="1000">
+                                    transition-all duration-500 hover:-translate-y-2"
+                            data-aos="zoom-in" data-aos-duration="1000">
                             <div class="w-14 h-14  flex items-center justify-center mb-5 text-3xl">
                                 <img width="48" height="48" src="https://img.icons8.com/3d-fluency/50/sofa.png"
                                     alt="sofa" />
@@ -193,12 +215,11 @@
                         </div>
 
                         <!-- Feature 4 -->
-                        <div
-                            class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
+                        <div class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
                                     border  bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 p-6 sm:p-8
                                     shadow-lg hover:shadow-2xl
-                                    transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in"
-                            data-aos-duration="1000">
+                                    transition-all duration-500 hover:-translate-y-2"
+                            data-aos="zoom-in" data-aos-duration="1000">
                             <div class="w-14 h-14  flex items-center justify-center mb-5 text-3xl">
                                 <img width="48" height="48"
                                     src="https://img.icons8.com/emoji/48/money-bag-emoji.png" alt="money-bag-emoji" />
@@ -212,12 +233,11 @@
                         </div>
 
                         <!-- Feature 5 -->
-                        <div
-                            class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
+                        <div class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
                                     border  bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 p-6 sm:p-8
                                     shadow-lg hover:shadow-2xl
-                                    transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in"
-                            data-aos-duration="1000">
+                                    transition-all duration-500 hover:-translate-y-2"
+                            data-aos="zoom-in" data-aos-duration="1000">
                             <div class="w-14 h-14  flex items-center justify-center mb-5 text-3xl">
                                 <img width="64" height="64"
                                     src="https://img.icons8.com/external-konkapp-flat-konkapp/64/external-noodle-seafood-konkapp-flat-konkapp.png"
@@ -232,12 +252,11 @@
                         </div>
 
                         <!-- Feature 6 -->
-                        <div
-                            class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
+                        <div class="bg-gray-500 bg-clip-padding backdrop-blur-lg backdrop-filter rounded-2xl
                                     border  bg-opacity-10 backdrop-saturate-100 backdrop-contrast-100 p-6 sm:p-8
                                     shadow-lg hover:shadow-2xl
-                                    transition-all duration-500 hover:-translate-y-2" data-aos="zoom-in"
-                            data-aos-duration="1000">
+                                    transition-all duration-500 hover:-translate-y-2"
+                            data-aos="zoom-in" data-aos-duration="1000">
                             <div class="w-14 h-14  flex items-center justify-center mb-5 text-3xl">
                                 <img src="https://img.icons8.com/?size=100&id=yHTclm7aovKd&format=png&color=000000"
                                     alt="">
@@ -268,11 +287,11 @@
                         <!-- Header -->
                         <div class="text-center mb-12">
                             <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-aos="fade-up"
-                            data-aos-duration="1000">
+                                data-aos-duration="1000">
                                 Ruangan Kami
                             </h2>
                             <p class="text-lg text-gray-400 max-w-2xl mx-auto" data-aos="fade-up"
-                            data-aos-delay="200">
+                                data-aos-delay="200">
                                 Lihat koleksi gaming room premium kami
                             </p>
                         </div>
@@ -308,9 +327,8 @@
                             class="relative">
 
                             <!-- Slides -->
-                            <div
-                                class="relative aspect-[16/9] md:aspect-[8/4] md:max-w-[900px] mx-auto rounded-2xl overflow-hidden bg-gray-800 shadow-2xl" data-aos="zoom-in"
-                            data-aos-duration="1000">
+                            <div class="relative aspect-[16/9] md:aspect-[8/4] md:max-w-[900px] mx-auto rounded-2xl overflow-hidden bg-gray-800 shadow-2xl"
+                                data-aos="zoom-in" data-aos-duration="1000">
                                 @foreach ($roomGallery as $index => $image)
                                     <div x-show="currentSlide === {{ $index }}"
                                         x-transition:enter="transition ease-out duration-500"
@@ -402,14 +420,13 @@
                         <h2 class="text-3xl sm:text-4xl font-bold text-gray-700 mb-4" data-aos="fade-up">
                             Cara Booking Mudah
                         </h2>
-                        <p class="text-lg text-gray-600" data-aos="fade-up"
-                            data-aos-delay="200">
+                        <p class="text-lg text-gray-600" data-aos="fade-up" data-aos-delay="200">
                             Hanya 3 langkah untuk mulai bermain!
                         </p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative" data-aos="zoom-in"
-                            data-aos-delay="400">
+                        data-aos-delay="400">
                         <!-- Step 1 -->
                         <div class="text-center relative">
                             <div
@@ -473,14 +490,14 @@
 
             <section class="max-w-3xl mx-auto px-4 py-16">
                 <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center" data-aos="fade-up"
-                            data-aos-duration="1000">
+                    data-aos-duration="1000">
                     Frequently Asked Questions
                 </h2>
 
                 <div class="space-y-4">
                     <!-- FAQ Item -->
                     <details class="group bg-white shadow-xl rounded-xl p-5 border border-gray-100" data-aos="fade-up"
-                            data-aos-delay="100">
+                        data-aos-delay="100">
                         <summary class="flex justify-between items-center cursor-pointer">
                             <span class="font-medium text-gray-800">Bagaimana cara melakukan reservasi?</span>
                             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
@@ -498,7 +515,7 @@
 
                     <!-- FAQ Item -->
                     <details class="group bg-white shadow-xl rounded-xl p-5 border border-gray-100" data-aos="fade-up"
-                            data-aos-delay="150">
+                        data-aos-delay="150">
                         <summary class="flex justify-between items-center cursor-pointer">
                             <span class="font-medium text-gray-800">Apakah bisa bayar di tempat?</span>
                             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
@@ -514,7 +531,7 @@
 
                     <!-- FAQ Item -->
                     <details class="group bg-white shadow-xl rounded-xl p-5 border border-gray-100" data-aos="fade-up"
-                            data-aos-delay="200">
+                        data-aos-delay="200">
                         <summary class="flex justify-between items-center cursor-pointer">
                             <span class="font-medium text-gray-800">Apakah boleh membawa makanan dan minuman
                                 sendiri?</span>
@@ -530,7 +547,7 @@
 
                     <!-- FAQ Item -->
                     <details class="group bg-white shadow-xl rounded-xl p-5 border border-gray-100" data-aos="fade-up"
-                            data-aos-delay="250">
+                        data-aos-delay="250">
                         <summary class="flex justify-between items-center cursor-pointer">
                             <span class="font-medium text-gray-800">Berapa maksimal orang dalam satu ruangan?</span>
                             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
@@ -546,7 +563,7 @@
 
                     <!-- FAQ Item -->
                     <details class="group bg-white shadow-xl rounded-xl p-5 border border-gray-100" data-aos="fade-up"
-                            data-aos-delay="300">
+                        data-aos-delay="300">
                         <summary class="flex justify-between items-center cursor-pointer">
                             <span class="font-medium text-gray-800">Apakah bisa refund atau reschedule?</span>
                             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
@@ -564,8 +581,8 @@
 
             <!-- BANTUAN LANJUTAN -->
             <section
-                class="max-w-3xl mx-auto px-4 py-10 text-center shadow-xl bg-white hover:bg-blue-500 rounded-xl duration-1000" data-aos="zoom-in"
-                            data-aos-duration="1000" data-aos-delay="200">
+                class="max-w-3xl mx-auto px-4 py-10 text-center shadow-xl bg-white hover:bg-blue-500 rounded-xl duration-1000"
+                data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
                 <p class="text-gray-800 mb-4 text-xl font-bold">
                     Informasi kurang lengkap ? <br>
                     <span class="font-light text-lg">Hubungi kami melalui WhatsApp atau hubunngi kontak lain dari kami
@@ -606,17 +623,15 @@
             <!-- CTA Section -->
             <div class="relative text-gray-700 py-16 sm:py-20 overflow-hidden">
                 <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-aos="fade-up"
-                            data-aos-duration="1000">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4" data-aos="fade-up" data-aos-duration="1000">
                         Ready to Level Up?
                     </h2>
-                    <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto"  data-aos="fade-up"
-                            data-aos-delay="200">
+                    <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
                         Booking sekarang dan rasakan pengalaman gaming terbaik dengan setup premium!
                     </p>
 
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center"  data-aos="zoom-in"
-                            data-aos-duration="1000">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="zoom-in"
+                        data-aos-duration="1000">
                         @guest
                             <a href="{{ route('register') }}"
                                 class="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-xl text-blue-600 bg-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
@@ -648,10 +663,10 @@
 
 
             <!-- Footer -->
-            <div class=" text-gray-500 py-12">
+            <div class=" text-gray-500 py-1">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8"  data-aos="zoom-in"
-                            data-aos-duration="1000">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8" data-aos="zoom-in"
+                        data-aos-duration="1000">
                         <!-- Brand -->
                         <div>
                             <h3 class="text-gray-700 text-xl font-bold mb-4">Private Gaming Room</h3>

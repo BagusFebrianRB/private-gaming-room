@@ -12,23 +12,25 @@ return new class extends Migration
             $table->id();
             $table->foreignId('booking_id')->constrained('bookings')->onDelete('cascade');
             $table->decimal('amount', 10, 2);
-            $table->enum('payment_method', ['midtrans', 'cash', 'qris', 'transfer']);
+
+            // ENUM final (tanpa midtrans)
+            $table->enum('payment_method', ['manual_transfer', 'cash', 'qris', 'transfer'])
+                ->default('manual_transfer');
+
             $table->enum('payment_type', ['dp', 'remaining', 'full']);
             $table->enum('status', ['pending', 'success', 'failed'])->default('pending');
 
-            // Midtrans fields
-            $table->string('midtrans_order_id')->nullable();
-            $table->string('midtrans_transaction_id')->nullable();
-            $table->string('midtrans_payment_type')->nullable(); // bank_transfer, gopay, dll
+            // Manual transfer fields
+            $table->string('proof_image')->nullable();
+            $table->text('rejected_reason')->nullable();
 
-            $table->string('paid_by')->nullable(); // 'customer' atau 'admin_name'
+            $table->string('paid_by')->nullable();
             $table->text('notes')->nullable();
             $table->timestamp('paid_at')->nullable();
             $table->timestamps();
 
             // Indexes
             $table->index('booking_id');
-            $table->index('midtrans_order_id');
             $table->index('status');
         });
     }

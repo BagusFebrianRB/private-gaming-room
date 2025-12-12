@@ -24,6 +24,7 @@ class Booking extends Model
         'remaining_amount',
         'payment_status',
         'booking_status',
+        'payment_deadline', // <— TAMBAH INI
         'notes',
         'cancelled_reason',
         'cancelled_by',
@@ -38,6 +39,7 @@ class Booking extends Model
         'total_amount' => 'decimal:2',
         'paid_amount' => 'decimal:2',
         'remaining_amount' => 'decimal:2',
+        'payment_deadline' => 'datetime', // <— TAMBAH INI
         'confirmed_at' => 'datetime',
         'completed_at' => 'datetime',
         'cancelled_at' => 'datetime',

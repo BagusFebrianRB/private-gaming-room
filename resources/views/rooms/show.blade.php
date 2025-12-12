@@ -1,15 +1,9 @@
 <x-guest-layout>
-    <div class="relative w-full bg-[#faf9f6] overflow-hidden min-h-screen">
-        <!-- Diagonal Cross Grid Top Background -->
-        <div class="fixed inset-0"
-            style="
-            background:
-                radial-gradient(125% 125% at 50% 90%, #fff 40%, #6d94e7 100%);
-        ">
-        </div>
+    <div class="relative w-full bg-white overflow-hidden min-h-screen">
+
         <div class="relative z-20">
             <!-- Breadcrumb -->
-            <div class="bg-white shadow-xl">
+            <div class="bg-white">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
                     <nav class="flex items-center space-x-2 text-sm">
                         <a href="{{ route('home') }}" class="text-gray-600 hover:text-gray-800">Home</a>

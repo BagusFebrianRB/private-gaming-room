@@ -16,7 +16,7 @@ return new class extends Migration
             $table->date('booking_date');
             $table->time('start_time');
             $table->time('end_time');
-            $table->integer('duration'); // dalam jam
+            $table->integer('duration');
             $table->decimal('price_per_hour', 10, 2);
             $table->decimal('total_amount', 10, 2);
             $table->enum('payment_type', ['dp', 'full']);
@@ -24,6 +24,10 @@ return new class extends Migration
             $table->decimal('remaining_amount', 10, 2)->default(0);
             $table->enum('payment_status', ['pending', 'partial', 'paid'])->default('pending');
             $table->enum('booking_status', ['pending', 'confirmed', 'completed', 'cancelled'])->default('pending');
+
+            // ⬇️ Tambahkan di sini
+            $table->timestamp('payment_deadline')->nullable();
+
             $table->text('notes')->nullable();
             $table->text('cancelled_reason')->nullable();
             $table->foreignId('cancelled_by')->nullable()->constrained('users')->onDelete('set null');
@@ -32,7 +36,7 @@ return new class extends Migration
             $table->timestamp('cancelled_at')->nullable();
             $table->timestamps();
 
-            // Indexes untuk query performance
+            // Indexes
             $table->index('booking_code');
             $table->index('booking_date');
             $table->index(['room_id', 'booking_date']);
